@@ -1,0 +1,33 @@
+name: neuropixels-course
+
+channels:
+  - conda-forge
+
+dependencies:
+  # Python
+  - python=3.11
+
+  # Jupyter / VS Code
+  - jupyter
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+
+  # Core scientific Python
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - scikit-learn
+
+  # Data handling
+  - h5py
+  - pyyaml
+  - tqdm
+  - requests
+
+  # Electrophysiology / Neuropixels
+  - pip
+
+  - pip:
+      - spikeinterface

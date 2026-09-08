@@ -30,4 +30,7 @@ dependencies:
   - pip
 
   - pip:
-      - spikeinterface
+      - spikeinterface[full]
+      - bombcell
+      - phy
+      - ibl-neuropixels

@@ -28,74 +28,28 @@
 
  # Operating System
 
- ## Windows is required for this course
-
- Some of the software used in this course is **Windows-only**, in particular:
+ The software used in this course has been tested on Windows, macOS and Linux. Some of the software used in this course is **Windows-only**, in particular:
 
  - SpikeGLX
 - CatGT
 
  Please ensure that you are running **Windows 10 or above** if you want to follow the complete course workflow.
 
- Participants using macOS or Linux may be able to complete some of the Python-based analysis exercises, but they will **not be able to run all of the acquisition and preprocessing software used in this course**.
+ Participants using macOS or Linux will still be able to complete some of the Python-based analysis exercises, but they will not be able to run all of the acquisition and preprocessing software used in this course.
 
- For the full course experience, a Windows 10/11 computer is therefore recommended.
-
----
-
- # Contents
-
- - Important: Operating System
-- Recommended computer setup
-- Software overview
-- Installing Miniforge and Python
-- Creating the course environment
-- Installing uv
-- Installing Git
-- Installing Visual Studio Code
-- VS Code extensions
-- Installation check
-- SpikeGLX
-- CatGT
-- NeuroPyxels
-- Kilosort
-- Phy
-- Bombcell
-- SpikeInterface
-- IBL Neuropixels
-- Pinpoint
-- Using the environment in VS Code
-- Using JupyterLab
-- Course repository structure
-- Working with the notebooks
-- Data
-- File paths
-- Git and the course repository
-- Troubleshooting
-- Reproducibility
-- Useful resources
-- Before the course
-- Course philosophy
-- Questions and problems
-- Acknowledgements
 
 ---
 
  # Recommended computer setup
 
- Neuropixels datasets can be large, and some analysis steps can require substantial memory, storage, and CPU resources.
+ Neuropixels datasets can be large. Some analysis steps can require substantial memory, storage and CPU resources.
 
  As a general recommendation:
 
- - **Operating system:** Windows 10 or Windows 11
-- **RAM:** 16 GB minimum; 32 GB or more recommended
+- **RAM:** 8 GB minimum; 16-32 GB or more recommended
 - **Storage:** SSD strongly recommended
-- **Free disk space:** at least 50 GB; more may be required for larger Neuropixels datasets
+- **Free disk space:** at least 50 GB or external drive; more may be required for larger Neuropixels datasets
 - **CPU:** a modern multi-core processor is recommended
-
- The exact requirements will depend on the size of the datasets used during the course.
-
- > **Important:** Raw Neuropixels recordings can be very large. Do not assume that a dataset will fit comfortably on a laptop simply because the corresponding notebook is small.
 
 ---
 
@@ -115,30 +69,6 @@
 
  Both SpikeGLX and CatGT are Windows-only.
 
----
-
- ## Python-based analysis
-
- The course Python environment includes:
-
- - NumPy
-- SciPy
-- pandas
-- Matplotlib
-- scikit-learn
-- JupyterLab
-- IPython kernel
-- h5py
-- tqdm
-- PyYAML
-- SpikeInterface
-- Phy
-- IBL Neuropixels tools
-- NeuroPyxels
-- Bombcell
-
----
-
  ## Spike sorting and curation
 
  The course also introduces:
@@ -146,6 +76,7 @@
  - Kilosort for spike sorting
 - Phy for manual curation
 - Bombcell for automated quality metrics and curation
+- NeuroPyxels for loading, processing and plotting Neuropixels data
 - SpikeInterface for building and managing spike-sorting workflows
 
 ---
@@ -206,14 +137,6 @@
 
  Instead, create a separate environment for each project or course.
 
- This has several advantages:
-
- - Package requirements are isolated.
-- Different projects can use different Python versions.
-- Package conflicts are less likely to affect other projects.
-- Environments can be recreated from an environment file.
-- The software environment used for an analysis can be documented and shared.
-
 ---
 
  # Creating the course environment
@@ -223,7 +146,7 @@
  First, clone the repository:
 
 ```
-git clone https://github.com/YOUR-USERNAME/neuropixels-course.git
+git clone https://github.com/TBD/hku-neuropixels-course.git
 ```
 
  Move into the repository:
@@ -241,7 +164,7 @@ conda env create -f environment.yml
  This will create an environment called:
 
 ```
-neuropixels-course
+hku-neuropixels-course
 ```
 
  Depending on your installation, you can use either `conda` or `mamba` for environment management.
@@ -261,13 +184,13 @@ mamba env create -f environment.yml
  After installation, activate the course environment:
 
 ```
-conda activate neuropixels-course
+conda activate hku-neuropixels-course
 ```
 
  or:
 
 ```
-mamba activate neuropixels-course
+mamba activate hku-neuropixels-course
 ```
 
  You can deactivate the environment with:
@@ -281,7 +204,7 @@ conda deactivate
  For example:
 
 ```
-(neuropixels-course) C:\Users\YourName\neuropixels-course>
+(neuropixels-course) C:\Users\YourName\hku-neuropixels-course>
 ```
 
  The `(neuropixels-course)` indicates that the course environment is currently active.
@@ -383,7 +306,7 @@ git version 2.x.x
  You can find it in:
 
 ```
-notebooks/00_installation_check.ipynb
+installation/installation_test.ipynb
 ```
 
  Please run this notebook **before the course**.
@@ -577,7 +500,7 @@ code .
 
  1. Open VS Code.
 2. Select **File → Open Folder...**
-3. Select the `neuropixels-course` folder.
+3. Select the `hku-neuropixels-course` folder.
 
 ---
 
@@ -598,7 +521,7 @@ Python: Select Interpreter
  4. Select:
 
 ```
-neuropixels-course
+hku-neuropixels-course
 ```
 
  The selected interpreter should correspond to the Python installation inside your Conda environment.
@@ -619,69 +542,6 @@ neuropixels-course
 
  > **Important:** Selecting the correct Jupyter kernel is one of the most common sources of problems when working with notebooks. If an import works in your terminal but fails in a notebook, first check which kernel the notebook is using.
 
----
-
- # Using JupyterLab
-
- You can also run the notebooks using JupyterLab.
-
- First activate the course environment:
-
-```
-conda activate neuropixels-course
-```
-
- Then start JupyterLab:
-
-```
-jupyter lab
-```
-
- A browser window should open automatically.
-
- If it does not, JupyterLab will display a URL in the terminal that you can copy into your browser.
-
- To stop JupyterLab, return to the terminal and press:
-
-```
-Ctrl+C
-```
-
----
-
- # Course repository structure
-
- The repository will generally be organised as follows:
-
-```
-neuropixels-course/
-│
-├── README.md
-├── environment.yml
-├── .gitignore
-│
-├── notebooks/
-│   ├── 00_installation_check.ipynb
-│   ├── 01_python_and_numpy.ipynb
-│   ├── 02_loading_data.ipynb
-│   ├── 03_visualising_neuropixels.ipynb
-│   ├── 04_preprocessing.ipynb
-│   ├── 05_spike_sorting.ipynb
-│   └── 06_unit_analysis.ipynb
-│
-├── exercises/
-│   └── ...
-│
-├── scripts/
-│   └── ...
-│
-└── data/
-    └── README.md
-```
-
- The exact notebook structure may change as the course develops.
-
----
 
  # Working with the notebooks
 
@@ -698,103 +558,19 @@ neuropixels-course/
  For example:
 
 ```
-conda activate neuropixels-course
-cd neuropixels-course
+conda activate hku-neuropixels-course
+cd hku-neuropixels-course
 code .
 ```
 
  Then open the appropriate notebook from the `notebooks/` directory.
 
----
-
- # Running a notebook
-
- In VS Code, cells can be run individually using the **Run Cell** button.
-
- You can also use:
-
- - `Shift + Enter` to run a cell and move to the next cell.
-- `Ctrl + Enter` / `Cmd + Enter` to run a cell without moving.
-
- Before running the entire notebook, it is often useful to run the cells sequentially so that you understand what each step is doing.
 
 ---
 
- # Restarting a notebook
-
- If a notebook gets into an unexpected state, restart the Python kernel.
-
- In VS Code:
-
- **Notebook → Restart Kernel**
-
- Then run the cells again from the beginning.
-
- This is particularly useful if variables have been modified or overwritten during an exercise.
-
----
-
- # Data
-
- The course repository may contain links or instructions for downloading example Neuropixels datasets.
-
- Large raw datasets will generally **not** be stored directly in this Git repository.
-
- This is intentional.
-
- Git repositories are not appropriate for storing large electrophysiology recordings.
-
- Instead, datasets should be downloaded separately and stored locally.
-
- For example:
-
-```
-neuropixels-course/
-│
-├── notebooks/
-├── exercises/
-├── scripts/
-│
-└── data/
-    ├── example_dataset/
-    └── README.md
-```
-
- The `data/` directory should normally be excluded from Git using `.gitignore`.
-
----
-
- # File paths
-
- When working with Neuropixels datasets, you will frequently need to specify file and folder paths.
-
- For example:
-
-```
-from pathlib import Path
-
-data_folder = Path("data/example_dataset")
-```
-
- Using `pathlib.Path` is recommended because it works well across Windows, macOS, and Linux.
-
- Avoid hard-coding paths such as:
-
-```
-data_folder = "C:\\Users\\John\\Desktop\\data"
-```
-
- because these paths will only work on a particular computer.
-
- Instead, use paths relative to the course repository whenever possible.
-
----
 
  # Git and the course repository
 
- If you are unfamiliar with Git, you do not need to learn the entire Git system to complete the course.
-
- The most important operations are:
 
  ## Clone the repository
 
@@ -819,284 +595,6 @@ git pull
 
  > **Important:** If you have modified course files locally, `git pull` may produce conflicts. If you are unsure what to do, do not delete or overwrite your work—ask the course instructor.
 
----
-
- # Updating the environment
-
- If the instructor changes `environment.yml`, you may need to update your environment.
-
- Run:
-
-```
-conda activate neuropixels-course
-conda env update -f environment.yml
-```
-
- or:
-
-```
-mamba activate neuropixels-course
-mamba env update -f environment.yml
-```
-
- Only update the environment when instructed to do so, as changes to the environment during the course can sometimes introduce compatibility issues.
-
----
-
- # Troubleshooting
-
- ## `conda` is not recognised
-
- If you see an error such as:
-
-```
-conda: command not found
-```
-
- or on Windows:
-
-```
-'conda' is not recognized as an internal or external command
-```
-
- First make sure that you have restarted your terminal after installing Miniforge.
-
- On Windows, open the **Miniforge Prompt** rather than Command Prompt or PowerShell.
-
- Then try:
-
-```
-conda --version
-```
-
----
-
- ## The `neuropixels-course` environment does not appear
-
- Check the available Conda environments:
-
-```
-conda env list
-```
-
- You should see something similar to:
-
-```
-base
-neuropixels-course
-```
-
- If the environment is missing, recreate it:
-
-```
-conda env create -f environment.yml
-```
-
----
-
- ## Python is the wrong version
-
- Activate the course environment:
-
-```
-conda activate neuropixels-course
-```
-
- Then check:
-
-```
-python --version
-```
-
- The result should be Python 3.11.x.
-
- If VS Code reports a different version, check the selected Python interpreter.
-
----
-
- ## A package cannot be imported
-
- For example:
-
-```
-ModuleNotFoundError: No module named 'spikeinterface'
-```
-
- First check that the correct environment is active:
-
-```
-conda activate neuropixels-course
-```
-
- Then run the installation check notebook:
-
-```
-notebooks/00_installation_check.ipynb
-```
-
- If the package is installed but the notebook still cannot find it, check the Jupyter kernel selected in VS Code.
-
----
-
- ## The notebook uses the wrong Python environment
-
- This is a very common issue.
-
- In VS Code:
-
- 1. Open the notebook.
-2. Click the kernel selector at the top right.
-3. Select:
-
-```
-neuropixels-course
-```
-
- If necessary, restart the kernel and run the notebook again.
-
----
-
- ## Jupyter is not installed
-
- Check:
-
-```
-jupyter --version
-```
-
- If the command is not available, make sure the course environment is active:
-
-```
-conda activate neuropixels-course
-```
-
- Then check again.
-
----
-
- ## SpikeGLX or CatGT will not run
-
- First confirm that you are using:
-
- - Windows 10 or later
-- A supported version of the software
-- The correct executable
-
- For SpikeGLX, consider using:
-
-```
-SpikeGLX_NISIM.exe
-```
-
- for the course exercises to avoid the requirement for NI drivers.
-
- Refer to the SpikeGLX documentation for installation and troubleshooting:
-
- https://billkarsh.github.io/SpikeGLX/
-
----
-
- ## Kilosort is not working
-
- Kilosort can have additional hardware and software requirements, particularly when using GPU acceleration.
-
- Check the official Kilosort installation instructions:
-
- https://github.com/MouseLand/Kilosort
-
- Do not assume that a Kilosort installation problem is caused by the course Python environment. Kilosort may have its own dependencies and hardware requirements.
-
----
-
- ## Phy is not working
-
- Check the official installation instructions:
-
- https://phy.readthedocs.io/en/latest/installation/
-
- Make sure that Phy is being launched from the environment in which it was installed.
-
----
-
- ## Bombcell is not working
-
- First check the official Python installation instructions:
-
- https://github.com/Julie-Fabre/bombcell#python
-
- Then run the example notebook from the Bombcell repository:
-
- https://github.com/Julie-Fabre/bombcell#-quick-start-guide
-
- Running the example notebook is a useful way to determine whether the issue is specific to the course notebooks or to the Bombcell installation itself.
-
----
-
- ## SpikeInterface cannot read my data
-
- First check that you are providing the correct folder.
-
- For SpikeGLX data, the relevant recording folder typically contains files associated with the recording streams.
-
- Refer to the SpikeInterface documentation for information about loading Neuropixels and SpikeGLX recordings:
-
- https://spikeinterface.readthedocs.io/
-
- Do not modify or rename raw acquisition files unless you know exactly what the consequences will be.
-
----
-
- ## The analysis is very slow
-
- Some Neuropixels operations are computationally expensive.
-
- This can be normal.
-
- For example:
-
- - Reading large recordings
-- Filtering
-- Motion correction
-- Spike sorting
-- Extracting waveforms
-- Computing quality metrics
-- Generating large visualisations
-
- Some operations can take a substantial amount of time and may use multiple CPU cores or a GPU.
-
- Start with the parameters provided in the course notebooks rather than immediately increasing the number of workers.
-
----
-
- # Reproducibility
-
- One of the goals of this course is to encourage reproducible analysis.
-
- A reproducible analysis should ideally specify:
-
- - The Python version
-- Package versions
-- Input data
-- Analysis parameters
-- Processing steps
-- Output files
-- Code used to generate the results
-
- The `environment.yml` file provides one part of this reproducibility by describing the Python software environment.
-
- For more advanced projects, consider recording the exact package versions used for an analysis.
-
- You can inspect installed Conda packages using:
-
-```
-conda list
-```
-
- and Python packages using:
-
-```
-pip list
-```
 
 ---
 
@@ -1204,10 +702,7 @@ pip list
 
  ## Computer and software
 
- - [ ] Windows 10 or Windows 11 is installed
 - [ ] Miniforge is installed
-- [ ] The Miniforge Prompt opens successfully
-- [ ] Conda works from the Miniforge Prompt
 - [ ] Git is installed
 - [ ] VS Code is installed
 - [ ] VS Code Python extension is installed
@@ -1217,7 +712,7 @@ pip list
 
  - [ ] Course repository has been cloned
 - [ ] `environment.yml` has been used to create the environment
-- [ ] `neuropixels-course` environment activates successfully
+- [ ] `hku-neuropixels-course` environment activates successfully
 - [ ] Python reports version 3.11.x
 - [ ] The installation check notebook runs successfully
 - [ ] All checks in the installation check notebook pass
@@ -1231,120 +726,14 @@ pip list
 - [ ] Kilosort is installed, if required for the course
 - [ ] Phy is installed
 - [ ] Bombcell Python version is installed
-- [ ] Bombcell example notebook has been run
 - [ ] SpikeInterface is installed
 - [ ] IBL Neuropixels tools are installed
 
  ## Notebooks
 
  - [ ] A course notebook opens successfully in VS Code
-- [ ] The `neuropixels-course` Jupyter kernel is available
+- [ ] The `hku-neuropixels-course` Jupyter kernel is available
 - [ ] A course notebook runs successfully
 
  If you encounter problems, please resolve them before the course where possible. If you cannot resolve an issue, bring the error message and details of your setup to the course.
 
----
-
- # Quick start
-
- If everything is already installed, the normal workflow is:
-
-```
-# Enter the repository
-cd neuropixels-course
-
-# Activate the course environment
-conda activate neuropixels-course
-
-# Open VS Code
-code .
-```
-
- Then:
-
- 1. Open the installation check notebook.
-2. Select the `neuropixels-course` Jupyter kernel.
-3. Run the installation checks.
-4. Once all checks pass, proceed to the course notebooks.
-
- Alternatively, launch JupyterLab with:
-
-```
-jupyter lab
-```
-
----
-
- # Course philosophy
-
- The aim of this course is not simply to provide a collection of commands for analysing Neuropixels recordings.
-
- Instead, we will focus on understanding the complete analysis pipeline:
-
-```
-Neuropixels acquisition
-        │
-        ▼
-SpikeGLX
-        │
-        ▼
-Raw Neuropixels data
-        │
-        ▼
-CatGT / preprocessing
-        │
-        ▼
-Data inspection and visualisation
-        │
-        ▼
-Spike sorting
-        │
-        ├───────────────┐
-        ▼               ▼
-    Kilosort       Other sorters
-        │
-        ▼
-Spike-sorting results
-        │
-        ├──────────────────────────┐
-        ▼                          ▼
-      Phy                    Bombcell
-Manual curation          Automated QC
-        │                          │
-        └────────────┬─────────────┘
-                     ▼
-               Curated units
-                     │
-                     ▼
-          Downstream analysis
-                     │
-                     ▼
-        Figures and interpretation
-```
-
- We will also use Python frameworks such as SpikeInterface, NeuroPyxels, and IBL Neuropixels tools to work with and analyse the resulting data.
-
- The notebooks are intended to be both **hands-on exercises** and **reference material** that you can return to when analysing your own Neuropixels datasets.
-
----
-
- # Questions and problems
-
- If you encounter a problem during installation or while working through the course:
-
- 1. Read the relevant section of this README.
-2. Run the installation check notebook.
-3. Check that the `neuropixels-course` Conda environment is active.
-4. Check that VS Code/Jupyter is using the correct Python environment.
-5. Check the installation instructions for the specific software.
-6. Restart VS Code or Jupyter if necessary.
-7. If the problem persists, report the error including:
-   - Operating system
-   - Python version
-   - The software or notebook that produced the error
-   - The command that produced the error
-   - The complete error message
-
- When asking for help, **please copy the complete error message rather than only describing what went wrong**. This makes diagnosing problems much easier.
-
----

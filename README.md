@@ -83,8 +83,6 @@
 
  # Installing Miniforge and Python
 
- ## Why Miniforge?
-
  **Miniforge** is recommended for installing Python for this course.
 
  Miniforge is an open-source project that provides a minimal entry point to Python together with the Conda and Mamba package management systems.
@@ -146,7 +144,7 @@
  First, clone the repository:
 
 ```
-git clone https://github.com/TBD/hku-neuropixels-course.git
+git clone https://github.com/sprrnd/hku-neuropixels-course.git
 ```
 
  Move into the repository:
@@ -575,7 +573,7 @@ code .
  ## Clone the repository
 
 ```
-git clone https://github.com/YOUR-USERNAME/neuropixels-course.git
+git clone https://github.com/sprrnd/neuropixels-course.git
 ```
 
  ## Update your local copy

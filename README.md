@@ -7,9 +7,7 @@
  We will use a combination of Python-based tools and dedicated Neuropixels software, including:
 
  - SpikeGLX
-- CatGT
 - NeuroPyxels
-- Kilosort
 - Phy
 - Bombcell
 - SpikeInterface
@@ -28,15 +26,7 @@
 
  # Operating System
 
- The software used in this course has been tested on Windows, macOS and Linux. Some of the software used in this course is **Windows-only**, in particular:
-
- - SpikeGLX
-- CatGT
-
- Please ensure that you are running **Windows 10 or above** if you want to follow the complete course workflow.
-
- Participants using macOS or Linux will still be able to complete some of the Python-based analysis exercises, but they will not be able to run all of the acquisition and preprocessing software used in this course.
-
+ The software used in this course has been tested on Windows, macOS and Linux.
 
 ---
 
@@ -62,12 +52,6 @@
  ### SpikeGLX
 
  SpikeGLX is the acquisition application used with Neuropixels probes.
-
- ### CatGT
-
- CatGT is used for preprocessing Neuropixels recordings acquired with SpikeGLX.
-
- Both SpikeGLX and CatGT are Windows-only.
 
  ## Spike sorting and curation
 
@@ -333,19 +317,6 @@ installation/installation_test.ipynb
 
  > **Important:** SpikeGLX is Windows-only.
 
----
-
- # CatGT
-
- CatGT is a preprocessing tool commonly used with Neuropixels data acquired using SpikeGLX.
-
- Download CatGT and read the documentation here:
-
- https://billkarsh.github.io/SpikeGLX/#catgt
-
- > **Important:** CatGT is Windows-only.
-
- The course will provide examples of using CatGT to prepare Neuropixels recordings for downstream analysis.
 
 ---
 
@@ -358,22 +329,6 @@ installation/installation_test.ipynb
  https://github.com/m-beau/NeuroPyxels#%EF%B8%8F-installation
 
  NeuroPyxels will be used for selected data loading, processing, and visualisation exercises.
-
----
-
- # Kilosort
-
- Kilosort is a powerful spike-sorting tool designed for large-scale electrophysiological recordings, including Neuropixels data.
-
- The course may use Kilosort for spike sorting and subsequent analysis of the resulting units.
-
- Installation instructions and documentation:
-
- https://github.com/MouseLand/Kilosort
-
- Please follow the installation instructions provided by the Kilosort project.
-
- > **Note:** Kilosort installation requirements can depend on the version being used and on your GPU configuration. Follow the version-specific installation instructions rather than installing an arbitrary version.
 
 ---
 
@@ -549,9 +504,9 @@ neuropixels-course
 
  1. Activate the Conda environment.
 2. Open the repository in VS Code.
-3. Select the `neuropixels-course` Python environment.
+3. Select the `hku-neuropixels-course` Python environment.
 4. Open the notebook.
-5. Select the `neuropixels-course` Jupyter kernel.
+5. Select the `hku-neuropixels-course` Jupyter kernel.
 
  For example:
 
@@ -587,7 +542,7 @@ git pull
  Run this from inside the repository:
 
 ```
-cd neuropixels-course
+cd hku-neuropixels-course
 git pull
 ```
 
@@ -718,10 +673,7 @@ git pull
  ## Neuropixels software
 
  - [ ] SpikeGLX is installed
-- [ ] SpikeGLX\_NISIM.exe has been tested
-- [ ] CatGT is installed
 - [ ] NeuroPyxels is installed
-- [ ] Kilosort is installed, if required for the course
 - [ ] Phy is installed
 - [ ] Bombcell Python version is installed
 - [ ] SpikeInterface is installed

@@ -134,7 +134,7 @@ git clone https://github.com/sprrnd/hku-neuropixels-course.git
  Move into the repository:
 
 ```
-cd neuropixels-course
+cd hku-neuropixels-course
 ```
 
  Create the environment:
@@ -189,7 +189,7 @@ conda deactivate
 (neuropixels-course) C:\Users\YourName\hku-neuropixels-course>
 ```
 
- The `(neuropixels-course)` indicates that the course environment is currently active.
+ The `(hku-neuropixels-course)` indicates that the course environment is currently active.
 
 ---
 
@@ -488,7 +488,7 @@ hku-neuropixels-course
  Select:
 
 ```
-neuropixels-course
+hku-neuropixels-course
 ```
 
  or the corresponding Python 3.11 environment.
@@ -528,7 +528,7 @@ code .
  ## Clone the repository
 
 ```
-git clone https://github.com/sprrnd/neuropixels-course.git
+git clone https://github.com/sprrnd/hku-neuropixels-course.git
 ```
 
  ## Update your local copy

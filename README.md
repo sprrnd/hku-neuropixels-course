@@ -1,18 +1,18 @@
 # HKU Neuropixels Course
 
- This repository contains the software environment, example notebooks, exercises, and reference material for the **HKU Neuropixels Course**.
+ This repository contains the software environment, example notebooks and reference material for the **HKU Neuropixels Course**.
 
  The course introduces practical analysis of Neuropixels electrophysiology data, from raw preprocessing through spike sorting, quality control and downstream analysis.
 
  We will use a combination of Python-based tools and dedicated Neuropixels software, including:
 
- - SpikeGLX
-- NeuroPyxels
-- Phy
-- Bombcell
-- SpikeInterface
-- IBL Neuropixels tools
-- Jupyter notebooks
+ - *SpikeGLX* for data acquisition
+ - *Kilosort* for spike sorting
+- *Phy* for manual curation
+- *Bombcell* for automated quality metrics and curation
+- *NeuroPyxels* for loading, processing and plotting Neuropixels data
+- *SpikeInterface* for building and managing spike-sorting workflows
+
 
  The repository is designed so that participants can:
 
@@ -25,35 +25,17 @@
 
 ---
 
- # Software overview
-
- The course uses several different types of software.
-
- ## Acquisition and preprocessing
-
- ### SpikeGLX
-
- SpikeGLX is the acquisition application used with Neuropixels probes.
-
- ## Spike sorting and curation
-
- The course also introduces:
-
- - Kilosort for spike sorting
-- Phy for manual curation
-- Bombcell for automated quality metrics and curation
-- NeuroPyxels for loading, processing and plotting Neuropixels data
-- SpikeInterface for building and managing spike-sorting workflows
+ # Course preparation
 
 ---
 
- # Operating System
+ ## Operating System
 
  The software used in this course has been tested on Windows, macOS and Linux.
 
 ---
 
- # Recommended computer setup
+ ## Recommended computer setup
 
  Neuropixels datasets can be large. Some analysis steps can require substantial memory, storage and CPU resources.
 
@@ -66,11 +48,11 @@
 
 ---
 
- # Installation
+ ## Installation
 
 You can find detailed installation instructions in the `installation` folder.
 
- ## Installation check
+ ### Installation check
 
  A dedicated notebook is provided to check that your computer and Python environment are correctly configured before starting the course.
 

@@ -1,9 +1,79 @@
-# HKU Neuropixels Course - Installation Guide
+# HKU Neuropixels Course
+
+ This repository contains the software environment, example notebooks, exercises, and reference material for the **HKU Neuropixels Course**.
+
+ The course introduces practical analysis of Neuropixels electrophysiology data, from raw preprocessing through spike sorting, quality control and downstream analysis.
+
+ We will use a combination of Python-based tools and dedicated Neuropixels software, including:
+
+ - SpikeGLX
+- NeuroPyxels
+- Phy
+- Bombcell
+- SpikeInterface
+- IBL Neuropixels tools
+- Jupyter notebooks
+
+ The repository is designed so that participants can:
+
+ - Install and test the required software before the course.
+- Clone the course repository.
+- Run the example Jupyter notebooks.
+- Complete the analysis exercises.
+- Use the repository as a reference after the course.
+
+---
+
+ # Operating System
+
+ The software used in this course has been tested on Windows, macOS and Linux.
+
+---
+
+ # Recommended computer setup
+
+ Neuropixels datasets can be large. Some analysis steps can require substantial memory, storage and CPU resources.
+
+ As a general recommendation:
+
+- **RAM:** 8 GB minimum; 16-32 GB or more recommended
+- **Storage:** SSD strongly recommended
+- **Free disk space:** at least 50 GB or external drive; more may be required for larger Neuropixels datasets
+- **CPU:** a modern multi-core processor is recommended
+
+---
+
+ # Software overview
+
+ The course uses several different types of software.
+
+ ## Acquisition and preprocessing
+
+ ### SpikeGLX
+
+ SpikeGLX is the acquisition application used with Neuropixels probes.
+
+ ## Spike sorting and curation
+
+ The course also introduces:
+
+ - Kilosort for spike sorting
+- Phy for manual curation
+- Bombcell for automated quality metrics and curation
+- NeuroPyxels for loading, processing and plotting Neuropixels data
+- SpikeInterface for building and managing spike-sorting workflows
+
 ---
 
  # Installing Miniforge and Python
 
  **Miniforge** is recommended for installing Python for this course.
+
+ Miniforge is an open-source project that provides a minimal entry point to Python together with the Conda and Mamba package management systems.
+
+ It contains a small selection of pre-configured packages and uses the **conda-forge** channel as its default and only channel.
+
+ This provides a lightweight and reproducible way of managing Python environments.
 
  ## Installation
 
@@ -31,9 +101,27 @@
 
 ---
 
- # Creating the course environment
+ # Conda environments
 
-It is recommended **not to install packages directly into your `base` environment**.
+ When you open the command line after installing Miniforge, you may see something similar to:
+
+```
+(base) C:\Users\YourName>
+```
+
+ The `(base)` indicates that you are currently in the Conda base environment.
+
+ ## Do not install course packages into `base`
+
+ It is recommended **not to install packages directly into your `base` environment**.
+
+ Installing many packages into `base` can lead to package incompatibilities. If the base environment becomes difficult to repair, you may need to delete and reinstall Miniforge.
+
+ Instead, create a separate environment for each project or course.
+
+---
+
+ # Creating the course environment
 
  The course repository contains an `environment.yml` file defining the Python environment used during the course.
 
@@ -66,7 +154,7 @@ hku-neuropixels-course
  For example:
 
 ```
-conda env create -f environment.yml
+mamba env create -f environment.yml
 ```
 
  > **Note:** Replace `conda` with `mamba` according to your preference. The same environment file can be used with either package manager.
@@ -81,13 +169,37 @@ conda env create -f environment.yml
 conda activate hku-neuropixels-course
 ```
 
+ or:
+
+```
+mamba activate hku-neuropixels-course
+```
+
+ You can deactivate the environment with:
+
+```
+conda deactivate
+```
+
+ When an environment is active, its name appears before the file directory or username in your terminal.
+
+ For example:
+
+```
+(neuropixels-course) C:\Users\YourName\hku-neuropixels-course>
+```
+
+ The `(hku-neuropixels-course)` indicates that the course environment is currently active.
+
 ---
 
  # Installing packages manually
 
  The `environment.yml` file should install the packages required for the course.
 
- You should therefore **not need to manually install packages**.
+ You should therefore **not manually install packages unless instructed to do so**.
+
+ If you need an additional package for your own analysis, install it into the course environment rather than the `base` environment.
 
 ---
 
@@ -145,6 +257,8 @@ git version 2.x.x
 
  Install the version appropriate for your operating system.
 
+ After installation, open VS Code.
+
 ---
 
  # VS Code extensions
@@ -193,7 +307,7 @@ installation/installation_test.ipynb
 
  Download SpikeGLX from:
 
- https://billkarsh.github.io/SpikeGLX/
+ https://billkarsh.github.io/SpikeGLX/#latest-application-downloads
 
  ## SpikeGLX\_NISIM
 
@@ -201,38 +315,7 @@ installation/installation_test.ipynb
 
  Using `SpikeGLX_NISIM.exe` avoids the need to install the National Instruments (NI) drivers required by the hardware acquisition version.
 
----
-
- # SpikeInterface
-
- SpikeInterface is a Python framework for creating flexible and reproducible spike-sorting workflows.
-
- It provides tools for:
-
- - Reading electrophysiology data
-- Preprocessing
-- Spike sorting
-- Waveform extraction
-- Quality metrics
-- Visualisation
-- Comparing sorting results
-- Curation and post-processing
-
- Documentation:
-
- https://spikeinterface.readthedocs.io/
-
- GitHub:
-
- https://github.com/SpikeInterface/spikeinterface
-
- A common import used in the course is:
-
-```
-import spikeinterface.full as si
-```
-
- SpikeInterface supports a range of electrophysiology formats and spike sorters and provides a unified interface for many parts of the analysis pipeline.
+ > **Important:** SpikeGLX is Windows-only.
 
 
 ---
@@ -243,7 +326,7 @@ import spikeinterface.full as si
 
  Follow the installation instructions provided by the project:
 
- https://github.com/m-beau/NeuroPyxels
+ https://github.com/m-beau/NeuroPyxels#%EF%B8%8F-installation
 
  NeuroPyxels will be used for selected data loading, processing, and visualisation exercises.
 
@@ -291,6 +374,38 @@ import spikeinterface.full as si
 
  Running the example notebook before the course will help ensure that Bombcell is correctly installed and that its dependencies are working.
 
+---
+
+ # SpikeInterface
+
+ SpikeInterface is a Python framework for creating flexible and reproducible spike-sorting workflows.
+
+ It provides tools for:
+
+ - Reading electrophysiology data
+- Preprocessing
+- Spike sorting
+- Waveform extraction
+- Quality metrics
+- Visualisation
+- Comparing sorting results
+- Curation and post-processing
+
+ Documentation:
+
+ https://spikeinterface.readthedocs.io/
+
+ GitHub:
+
+ https://github.com/SpikeInterface/spikeinterface
+
+ A common import used in the course is:
+
+```
+import spikeinterface.full as si
+```
+
+ SpikeInterface supports a range of electrophysiology formats and spike sorters and provides a unified interface for many parts of the analysis pipeline.
 
 ---
 
@@ -324,13 +439,70 @@ import spikeinterface.full as si
 
 ---
 
+ # Using the environment in VS Code
+
+ Open the course repository in VS Code.
+
+ From the repository directory, you can run:
+
+```
+code .
+```
+
+ Alternatively:
+
+ 1. Open VS Code.
+2. Select **File → Open Folder...**
+3. Select the `hku-neuropixels-course` folder.
+
+---
+
+ ## Selecting the Python interpreter
+
+ In VS Code:
+
+ 1. Open a Python file or Jupyter notebook.
+2. Open the Command Palette:
+   - **Windows/Linux:** `Ctrl+Shift+P`
+   - **macOS:** `Cmd+Shift+P`
+3. Search for:
+
+```
+Python: Select Interpreter
+```
+
+ 4. Select:
+
+```
+hku-neuropixels-course
+```
+
+ The selected interpreter should correspond to the Python installation inside your Conda environment.
+
+---
+
+ # Selecting the Jupyter kernel
+
+ When you open a `.ipynb` notebook in VS Code, you will see a kernel/interpreter selector near the top-right of the notebook.
+
+ Select:
+
+```
+hku-neuropixels-course
+```
+
+ or the corresponding Python 3.11 environment.
+
+ > **Important:** Selecting the correct Jupyter kernel is one of the most common sources of problems when working with notebooks. If an import works in your terminal but fails in a notebook, first check which kernel the notebook is using.
+
+
  # Working with the notebooks
 
  The course notebooks are intended to be run in order unless otherwise specified.
 
  Before starting a notebook:
 
-1. Activate the Conda environment.
+ 1. Activate the Conda environment.
 2. Open the repository in VS Code.
 3. Select the `hku-neuropixels-course` Python environment.
 4. Open the notebook.
@@ -345,6 +517,36 @@ code .
 ```
 
  Then open the appropriate notebook from the `notebooks/` directory.
+
+
+---
+
+
+ # Git and the course repository
+
+
+ ## Clone the repository
+
+```
+git clone https://github.com/sprrnd/hku-neuropixels-course.git
+```
+
+ ## Update your local copy
+
+ If the instructor adds new notebooks or fixes an error:
+
+```
+git pull
+```
+
+ Run this from inside the repository:
+
+```
+cd hku-neuropixels-course
+git pull
+```
+
+ > **Important:** If you have modified course files locally, `git pull` may produce conflicts. If you are unsure what to do, do not delete or overwrite your work—ask the course instructor.
 
 
 ---

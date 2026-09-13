@@ -35,12 +35,12 @@ https://viz.internationalbrainlab.org/app
 
 ## Getting started with IBL data
 
-### IBL documentation for loading Neuropixels data with ONE
+### IBL documentation: loading Neuropixels data with ONE
 
-ONE documentation: https://int-brain-lab.github.io/ONE/
+IBL provides documentation for working with Neuropixels data using the ONE interface: https://int-brain-lab.github.io/ONE/
 
-Quick start: https://docs.internationalbrainlab.org/notebooks_external/one_quickstart.html
+For a quick introduction, see https://docs.internationalbrainlab.org/notebooks_external/one_quickstart.html
 
 ### Example notebook
 
-`notebooks\00_IBL_quick_start.ipynb` follows a quick introduction to the basics of loading and analysing IBL Neuropixels data.
+The `00_IBL_quick_start.ipynb` notebook provides a hands-on introduction to the basics of loading and analysing IBL Neuropixels data.

@@ -67,3 +67,15 @@ installation/installation_test.ipynb
  The notebook checks that the required Python packages are installed and that the course environment is working correctly.
 
 ---
+
+ ## Pre-course exploratory analysis
+
+You can find relevant resources for the course in the `notebooks` folder.
+
+If you would like to familiarise yourself with Neuropixels data and the IBL dataset before the course, we recommend working through the practice notebook:
+
+```
+notebooks/00_IBL_quick_start.ipynb
+```
+
+This notebook provides a basic introduction to the IBL brain-wide map dataset and covers the fundamentals of loading and analysing Neuropixels recordings.

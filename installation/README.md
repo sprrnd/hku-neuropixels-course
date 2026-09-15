@@ -11,10 +11,6 @@
 
  https://github.com/conda-forge/miniforge#install
 
- Alternatively, a step-by-step guide is available here:
-
- https://biapol.github.io/blog/mara\_lampert/getting\_started\_with\_mambaforge\_and\_python/readme.html
-
  Install the appropriate version for your operating system.
 
  After installation, **restart your terminal** so that Miniforge becomes available.

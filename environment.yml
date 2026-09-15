@@ -1,4 +1,4 @@
-name: neuropixels-course
+name: hku-neuropixels-course
 
 channels:
   - conda-forge

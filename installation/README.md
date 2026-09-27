@@ -56,16 +56,7 @@ conda env create -f environment.yml
 ```
 hku-neuropixels-course
 ```
-
- Depending on your installation, you can use either `conda` or `mamba` for environment management.
-
- For example:
-
-```
-conda env create -f environment.yml
-```
-
- > **Note:** Replace `conda` with `mamba` according to your preference. The same environment file can be used with either package manager.
+**Note:** Replace `conda` with `mamba` according to your preference. The same environment file can be used with either package manager.
 
 ---
 

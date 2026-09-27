@@ -14,23 +14,23 @@ dependencies:
   - ipywidgets
 
   # Core scientific Python
-  - numpy
-  - scipy
-  - pandas
-  - matplotlib
-  - scikit-learn
+  - numpy=2.3.5
+  - scipy=1.17.1
+  - pandas=3.0.6
+  - matplotlib=3.11.2
+  - scikit-learn=1.9.1
 
   # Data handling
-  - h5py
-  - pyyaml
-  - tqdm
-  - requests
+  - h5py=3.16.0
+  - pyyaml=6.0.3
+  - tqdm=4.70.1
+  - requests=2.34.2
 
   # Electrophysiology / Neuropixels
   - pip
 
   - pip:
-      - spikeinterface[full]
-      - bombcell
-      - phy
-      - ibl-neuropixel
+      - spikeinterface==0.105.0
+      - bombcell==0.89
+      - phy==2.1.0
+      - ibl-neuropixel==1.13.0

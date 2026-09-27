@@ -33,4 +33,4 @@ dependencies:
       - spikeinterface[full]
       - bombcell
       - phy
-      - ibl-neuropixels
+      - ibl-neuropixel

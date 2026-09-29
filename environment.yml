@@ -30,7 +30,7 @@ dependencies:
   - pip
 
   - pip:
-      - spikeinterface==0.105.0
+      - spikeinterface[full,widgets]==0.105.0
       - bombcell==0.89
       - phy==2.1.0
       - ibl-neuropixel==1.13.0

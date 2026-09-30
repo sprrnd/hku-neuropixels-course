@@ -10,7 +10,7 @@ dependencies:
   # Jupyter / VS Code
   - jupyter
   - jupyterlab
-  - ipykernel
+  - ipykernel==7.3.0
   - ipywidgets
 
   # Core scientific Python
